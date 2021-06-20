@@ -7,6 +7,7 @@ import TareaContext from '../../contexts/tareas/TareaContext';
 
 const ListadoTareas = () => {
     const wrapper = React.createRef();
+    console.log(wrapper)
 
     const proyectoContext = useContext(ProyectoContext)
     const { proyecto, eliminaProyecto } = proyectoContext

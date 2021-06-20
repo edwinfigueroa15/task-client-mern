@@ -1,8 +1,8 @@
-import React, { useReducer, useState } from 'react';
+import React, { useReducer } from 'react';
 import TareaContext from './TareaContext';
 import TareaReducer from './TareaReducer';
 import clienteAxios from '../../config/axios'
-import { TAREAS_PROYECTO, AGREGAR_TAREA, VALIDAR_TAREA, ELIMINAR_TAREA, ESTADO_TAREA, TAREA_ACTUAL, ACTUALIZAR_TAREA, LIMPIAR_TAREA } from '../../types';
+import { TAREAS_PROYECTO, AGREGAR_TAREA, VALIDAR_TAREA, ELIMINAR_TAREA, TAREA_ACTUAL, ACTUALIZAR_TAREA, LIMPIAR_TAREA } from '../../types';
 
 const TareaState = props => {
 
@@ -29,7 +29,7 @@ const TareaState = props => {
 
     const agregarTarea = async tarea => {
         try {
-            const response = await clienteAxios.post('/api/tareas', tarea)
+            await clienteAxios.post('/api/tareas', tarea)
             dispatch({
                 type : AGREGAR_TAREA,
                 payload : tarea,
